@@ -1,3 +1,28 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap");
+
+@font-face {
+  font-family: "Stockholm";
+  src: url("./fonts/Stockholm.ttf.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+:root {
+  --sangria-red: #941b13;
+  --terracotta-pink: #db795e;
+  --swiss-gray: #dcd1cb;
+  --mink-lilac: #957a8d;
+  --purple-port: #622648;
+  --flex-display: flex;
+}
+
+html {
+  font-size: 62.5%;
+}
+
 body {
-  background-color: beige;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  background: var(--swiss-gray);
 }
