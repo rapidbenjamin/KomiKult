@@ -9,6 +9,7 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: '[name].js',
+    assetModuleFilename: './src/assets/images/[name].[ext]',
     clean: true,
   },
   plugins: [
@@ -23,9 +24,9 @@ module.exports = {
         use: ['style-loader', 'css-loader'],
       },
       {
-        test: /\.(jpg|jpeg|png)$/,
-        type: 'asset/resource',
-      }
+        test: /\.(png|jpg|gif|svg|eot|ttf|woff)$/,
+        type: 'asset/resource'
+      },
     ],
   },
   devServer: {
