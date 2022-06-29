@@ -64,3 +64,33 @@ body {
   text-decoration: none;
   color: var(--pale-silver);
 }
+
+.container {
+  padding: 0 50px;
+}
+
+.charc-list{
+  display: flex;
+  gap: 20px;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  list-style: none;
+  padding: 0;
+}
+
+.charc-list > li {
+padding: 0;
+width: 216px;
+}
+
+.like {
+  background-color: transparent;
+  color: blue;
+  border: solid 1px blue;
+}
+
+.like:active {
+  background-color: darkcyan;
+  color: blue;
+  border: solid 1px blue;
+}
