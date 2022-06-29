@@ -1,3 +1,66 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap");
+
+@font-face {
+  font-family: "Stockholm";
+  src: url("./fonts/Stockholm.ttf.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+:root {
+  --blood-red: #690801;
+  --indigo-dye: #013c5a;
+  --pale-silver: #d6c8bf;
+  --rufous: #9d0000;
+  --ochre: #d57a0b;
+  --tumble-weed: #cead93;
+  --black-bean: #481702;
+  --chocolate: #713509;
+  --sepia: #7c4a15;
+  --flex-display: flex;
+}
+
+html {
+  font-size: 62.5%;
+}
+
 body {
-  background-color: beige;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  background: var(--swiss-gray);
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  background: var(--blood-red);
+  font-family: "Stockholm", sans-serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: 0.1rem;
+  text-transform: uppercase;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;
+}
+
+.nav-bar {
+  padding-right: 3rem;
+}
+
+.nav-items {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  list-style: none;
+}
+
+.nav-item a {
+  text-decoration: none;
+  color: var(--pale-silver);
 }
