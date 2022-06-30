@@ -1,5 +1,26 @@
 import './styles.css';
-import { getData } from "./js/api";
+import { DomElement } from "./js/dom";
+// import { popupWindow } from "./js/popup";
 
-// calling the function to create the page 
-getData();
+
+const modal = document.getElementById("modal")
+
+const openModalButtons = document.querySelectorAll('[data-modal-target]');
+
+// Adding Characters to page 
+const test = async ( ) => {
+  await DomElement.addCharacterList()
+  DomElement.popupWindow()
+}
+
+test()
+
+openModalButtons.forEach(button => {
+  button.addEventListener('click', () => {
+    // const modal = document.querySelector('button.dataset.modalTarget');
+    console.log(modal)
+      if (modal === null) return;
+      modal.classList.add('.active');
+      // overlay.classList.add('.active');
+  })
+})
