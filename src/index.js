@@ -1,5 +1,19 @@
 import './styles.css';
-import { getData } from "./js/api";
+import Api from './js/api';
+import { renderCharacters } from './js/render';
+import { closeModal } from './js/popup';
 
-// calling the function to create the page 
-getData();
+const fetchData = Api.getCharacters();
+fetchData.then(data => {
+  renderCharacters(data.data.results);
+}
+);
+
+// get close button
+document.getElementById('close-button').addEventListener('click', () => {
+  const modal = document.querySelector('#modal');
+  closeModal(modal);
+}
+);
+
+
