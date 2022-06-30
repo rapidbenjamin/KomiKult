@@ -171,6 +171,8 @@ body {
   bottom: 0;
   background: rgba(0, 0, 0, 0.7);
   pointer-events: none;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
 }
 
 #overlay.active {
