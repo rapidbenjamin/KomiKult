@@ -4,10 +4,14 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="path/to/font-awesome/css/font-awesome.min.css"
+    />
     <title>Document</title>
   </head>
   <body>
-      <main>
+    <main>
       <header class="header">
         <a href="#"
           ><img src="./assets/komikult.png" alt="komikult" class="logo"
@@ -25,7 +29,34 @@
           <ul class="charc-list" id="charc-list"></ul>
         </div>
       </section>
-</main>
-
+    </main>
+    <div class="modal" id="modal">
+      <div class="modal-header">
+        <button data-close-button id="close-button" class="close-button">
+          &times
+        </button>
+      </div>
+      <div class="modal-body">
+        <img id="modal-img" class="modal-img" src="${imageUrl}" alt="" />
+        <p id="modal-desc" class="description">${description}</p>
+      </div>
+      <h2 id="modal-name" class="modal-name">${name}</h2>
+      <div class="comment-section">
+        <h2>Add a comment</h2>
+        <form id="commentForm">
+          <input type="text" placeholder="Your name" id="addName" />
+        </form>
+        <textarea
+          form="commentForm"
+          class="insights"
+          id="insights"
+          cols="30"
+          rows="10"
+          placeholder="Your insights"
+        ></textarea>
+        <button id="addComment">Add comment</button>
+      </div>
+    </div>
+    <div id="overlay"></div>
   </body>
 </html>
