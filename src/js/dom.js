@@ -29,8 +29,8 @@ class DomElement {
       `;
     }
    }
-   static popupWindow = async () => {
 
+   static popupWindow = async () => {
     popup.innerHTML += `
     <div class="modal-header">
      <button data-close-button class="close-button">&times</button>

@@ -15,12 +15,4 @@ const test = async ( ) => {
 
 test()
 
-openModalButtons.forEach(button => {
-  button.addEventListener('click', () => {
-    // const modal = document.querySelector('button.dataset.modalTarget');
-    console.log(modal)
-      if (modal === null) return;
-      modal.classList.add('.active');
-      // overlay.classList.add('.active');
-  })
-})
+
