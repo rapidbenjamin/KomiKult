@@ -1,12 +1,12 @@
 import './styles.css';
 import { DomElement } from "./js/dom";
 import { addLike, getLikesNumber } from "./js/likesApi";
+import Api from './js/api';
+import { renderCharacters } from './js/render';
+import { closeModal } from './js/popup';
 
-// addLike('0')
 // Adding Characters to page 
-
-
-const test = async () => {
+const mainItemfunction = async () => {
   try {
     await DomElement.addCharacterList()
     
@@ -25,11 +25,21 @@ const test = async () => {
     })
   }
 }
-test()
 
+mainItemfunction()
 
-
-const ProjectId = () => { fetch("https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/",
- { method: 'POST'}).then((data)=> { console.log( data.text()) })
+const fetchData = Api.getCharacters();
+fetchData.then(data => {
+  renderCharacters(data.data.results);
 }
-ProjectId()
+);
+
+// get close button
+document.getElementById('close-button').addEventListener('click', () => {
+  const modal = document.querySelector('#modal');
+  closeModal(modal);
+}
+);
+
+
+

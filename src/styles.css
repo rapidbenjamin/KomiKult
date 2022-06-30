@@ -80,9 +80,8 @@ body {
   padding: 0;
 }
 
-.charc-list > li {
+.charc-list li {
   padding: 0;
-  width: 216px;
 }
 
 .like {
@@ -144,10 +143,20 @@ body {
   padding: 2rem;
 }
 
+.modal-name {
+  position: relative;
+  bottom: 2rem;
+  left: 2rem;
+  font-size: 1.7rem;
+  font-weight: 900;
+}
+
 .description {
+  display: var(--flex-display);
+  justify-content: flex-start;
   margin: 0 auto 20rem auto;
   padding: 1rem 1.5rem;
-  font-size: 1.3rem;
+  font-size: 1.8rem;
   line-height: 1.2;
   letter-spacing: 0.5px;
 }
@@ -160,8 +169,10 @@ body {
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(0, 0, 0, 0.7);
   pointer-events: none;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
 }
 
 #overlay.active {
@@ -176,7 +187,7 @@ body {
   margin-bottom: 1rem;
   position: relative;
   left: 27rem;
-  bottom: 20rem;
+  bottom: 25rem;
 }
 
 .comment-section input {
