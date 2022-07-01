@@ -1,5 +1,5 @@
-import {Api} from "./api";
-import {getLikesNumber } from "./likesApi";
+import { Api } from "./api";
+import { getLikesNumber } from "./likesApi";
 import CommentApi from "./commentAPI";
 
 import { openModal } from "./popup";
@@ -10,12 +10,12 @@ export const renderCharacters = async (characters) => {
   let html = '';
   const likesNumber = await getLikesNumber() || [];
   let likeNum;
-  characters.forEach((character,index) => {
-    if (likesNumber[index] === undefined || likesNumber[index] === null ) {
+  characters.forEach((character, index) => {
+    if (likesNumber[index] === undefined || likesNumber[index] === null) {
       likeNum = "0"
-   } else {
-       likeNum = likesNumber[index].likes
-   }
+    } else {
+      likeNum = likesNumber[index].likes
+    }
     if ((!character.thumbnail.path.includes('image_not_available')) && (character.description !== '')) {
       html += `
       <li class="char-item" id="${character.id}">
@@ -42,13 +42,8 @@ export const renderCharacters = async (characters) => {
         document.getElementById('modal-img').src = `${character.thumbnail.path}/portrait_incredible.${character.thumbnail.extension}`;
         // update the modal description
         const characterDescription = document.getElementById('modal-desc');
-        // if (character.description === '') {
-        //   document.getElementById('modal-desc').innerHTML = 'No description available for this character.';
-        // }
-        // else {
-        // }
         characterDescription.innerHTML = character.description;
-        
+
         //display the character name
         document.getElementById('modal-name').innerHTML = character.name;
 
@@ -86,5 +81,5 @@ export const countComments = comments => {
 
 
 export const listCounter = (characterItems) => {
-   return characterItems.length
- };
+  return characterItems.length
+};

@@ -51,6 +51,11 @@ body {
   z-index: 1;
 }
 
+.logo {
+  height: 40px;
+  width: 100%;
+}
+
 .nav-bar {
   padding-right: 3rem;
 }
@@ -60,6 +65,7 @@ body {
   align-items: center;
   gap: 2rem;
   list-style: none;
+  color: var(--pale-silver);
 }
 
 .nav-item a {
@@ -67,8 +73,15 @@ body {
   color: var(--pale-silver);
 }
 
+.items-number {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--pale-silver);
+}
+
 .container {
   padding: 0 50px;
+  margin-top: 10rem;
 }
 
 .charc-list {
