@@ -1,7 +1,7 @@
 import './styles.css';
 import { DomElement } from "./js/dom";
 import { addLike, getLikesNumber } from "./js/likesApi";
-import Api from './js/api';
+import {Api} from './js/api';
 import { renderCharacters } from './js/render';
 import { closeModal } from './js/popup';
 
@@ -26,7 +26,6 @@ const mainItemfunction = async () => {
   }
 }
 
-mainItemfunction()
 
 const fetchData = Api.getCharacters();
 fetchData.then(data => {
@@ -42,4 +41,5 @@ document.getElementById('close-button').addEventListener('click', () => {
 );
 
 
+mainItemfunction()
 

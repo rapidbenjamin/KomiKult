@@ -1,5 +1,5 @@
 const charactersList = document.getElementById('charc-list');
-import Api from "./api";
+import {Api} from "./api";
 import { openModal } from "./popup";
 
 const renderCharacters = (characters) => {
