@@ -8,7 +8,7 @@ const charactersList = document.getElementById('charc-list');
 
 export const renderCharacters = async (characters) => {
   let html = '';
-  const likesNumber = await getLikesNumber();
+  const likesNumber = await getLikesNumber() || [];
   let likeNum;
   characters.forEach((character,index) => {
     if (likesNumber[index] === undefined || likesNumber[index] === null ) {
@@ -16,7 +16,7 @@ export const renderCharacters = async (characters) => {
    } else {
        likeNum = likesNumber[index].likes
    }
-    if (!character.thumbnail.path.includes('image_not_available')) {
+    if ((!character.thumbnail.path.includes('image_not_available')) && (character.description !== '')) {
       html += `
       <li class="char-item" id="${character.id}">
         <img style="width:100%" src="${character.thumbnail.path}/portrait_uncanny.${character.thumbnail.extension}" alt="${character.name}">
@@ -42,13 +42,13 @@ export const renderCharacters = async (characters) => {
         document.getElementById('modal-img').src = `${character.thumbnail.path}/portrait_incredible.${character.thumbnail.extension}`;
         // update the modal description
         const characterDescription = document.getElementById('modal-desc');
-        if (character.description === '') {
-          document.getElementById('modal-desc').innerHTML = 'No description available for this character.';
-        }
-        else {
-          characterDescription.innerHTML = character.description;
-        }
-
+        // if (character.description === '') {
+        //   document.getElementById('modal-desc').innerHTML = 'No description available for this character.';
+        // }
+        // else {
+        // }
+        characterDescription.innerHTML = character.description;
+        
         //display the character name
         document.getElementById('modal-name').innerHTML = character.name;
 
