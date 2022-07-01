@@ -1,5 +1,5 @@
 //  marvel api
-const url = "https://gateway.marvel.com/v1/public/characters?ts=1&apikey=1b4878691fe6328b46c8b8eb4bde2f9f&hash=93ebee6185894b7ebc29d9ed94f988a9";
+const url = "https://gateway.marvel.com/v1/public/characters?ts=1&apikey=1b4878691fe6328b46c8b8eb4bde2f9f&hash=93ebee6185894b7ebc29d9ed94f988a9&limit=100&offset=70";
 
 const characterUrl = "https://gateway.marvel.com/v1/public/characters";
 

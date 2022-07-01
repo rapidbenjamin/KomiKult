@@ -1,6 +1,6 @@
 // link to likes and message store api
 // like data
-const projectApiId = "6vHmXZ5YSM4TpBAtn7Kx"
+const projectApiId = "gZumCAVMg7210Q6sIqx3"
 const likesApiUrl = `https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/${projectApiId}/likes/`;
 
 export const addLike = async (itemId) => {
