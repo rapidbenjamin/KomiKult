@@ -7,10 +7,10 @@ export default class CommentApi {
   }
 
   static async postComment(id, username, comment) {
-    const response = await fetch(`${commentUrl}?item_id=/${id}`, {
+    await fetch(`${commentUrl}?item_id=/${id}`, {
       method: 'POST',
       headers: {
-        'Content-Type': 'application/json'
+        'Content-Type': 'application/json',
       },
       body: JSON.stringify({
         item_id: id,
@@ -18,8 +18,6 @@ export default class CommentApi {
         comment,
       }),
     });
-    const data = await response.JSON();
-    return data;
   }
 }
 
