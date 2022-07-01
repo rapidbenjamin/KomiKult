@@ -83,3 +83,8 @@ export const countComments = comments => {
 export const listCounter = (characterItems) => {
   return characterItems.length
 };
+
+export const footerCopyright = (copyright)  => {
+  const copyrightElement = document.getElementById("copyright")
+  copyrightElement.textContent = copyright;
+}

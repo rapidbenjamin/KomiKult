@@ -2,7 +2,7 @@ import './styles.css';
 
 import { addLike } from "./js/likesApi";
 import {Api} from './js/api';
-import { renderCharacters, renderComments, countComments,listCounter } from './js/render';
+import { renderCharacters, renderComments, countComments,listCounter,footerCopyright } from './js/render';
 import { closeModal } from './js/popup';
 import CommentApi from './js/commentAPI';
 
@@ -11,6 +11,7 @@ const fetchData = Api.getCharacters();
 fetchData.then(async data => {
   try {
    await renderCharacters(data.data.results);
+   await footerCopyright(data.attributionText)
   } 
   finally{
     likeAdd()
