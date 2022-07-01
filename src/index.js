@@ -1,14 +1,38 @@
 import './styles.css';
-import Api from './js/api';
-import { renderCharacters, renderComments, countComments } from './js/render';
+
+import { addLike } from "./js/likesApi";
+import {Api} from './js/api';
+import { renderCharacters, renderComments, countComments,listCounter } from './js/render';
 import { closeModal } from './js/popup';
 import CommentApi from './js/commentAPI';
 
+// Adding Characters to page 
 const fetchData = Api.getCharacters();
-fetchData.then(data => {
-  renderCharacters(data.data.results);
+fetchData.then(async data => {
+  try {
+   await renderCharacters(data.data.results);
+  } 
+  finally{
+    likeAdd()
+    const items = document.querySelectorAll('.char-item')
+    const itemNumber = document.querySelector('.items-number')
+    itemNumber.textContent =  `${listCounter(items)}` ;
+  }
 }
-);
+)
+
+const likeAdd = () => {
+  // const charactersLists = document.querySelectorAll('.char-item')
+  const likeBtn = document.querySelectorAll('.like');
+  const likeNum = document.querySelectorAll('.likesCounter')
+  // DomElement.listCounter(charactersLists)
+  likeBtn.forEach((element, index) => {
+    element.addEventListener("click", async () => {
+      await addLike(+likeBtn[index].parentElement.id)
+      likeNum[index].textContent = `${+likeNum[index].textContent + 1}`
+    })
+  })
+}
 
 // get close button
 document.getElementById('close-button').addEventListener('click', () => {
@@ -18,6 +42,8 @@ document.getElementById('close-button').addEventListener('click', () => {
 );
 
 const addButton = document.getElementById('add-button');
+
+
 
 addButton.addEventListener('click', async (e) => {
   e.preventDefault();
@@ -46,3 +72,4 @@ overlay.addEventListener('click', () => {
     closeModal(modal);
   })
 });
+

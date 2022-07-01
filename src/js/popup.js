@@ -28,3 +28,4 @@ export const closeModal = modal => {
   overlay.classList.remove('active');
 }
 
+

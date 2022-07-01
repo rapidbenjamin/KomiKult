@@ -1,18 +1,27 @@
-import Api from "./api";
+import {Api} from "./api";
+import {getLikesNumber } from "./likesApi";
 import CommentApi from "./commentAPI";
+
 import { openModal } from "./popup";
 
 const charactersList = document.getElementById('charc-list');
 
-export const renderCharacters = (characters) => {
+export const renderCharacters = async (characters) => {
   let html = '';
-  characters.forEach(character => {
+  const likesNumber = await getLikesNumber();
+  let likeNum;
+  characters.forEach((character,index) => {
+    if (likesNumber[index] === undefined || likesNumber[index] === null ) {
+      likeNum = "0"
+   } else {
+       likeNum = likesNumber[index].likes
+   }
     if (!character.thumbnail.path.includes('image_not_available')) {
       html += `
-      <li>
+      <li class="char-item" id="${character.id}">
         <img style="width:100%" src="${character.thumbnail.path}/portrait_uncanny.${character.thumbnail.extension}" alt="${character.name}">
         <p>${character.name}</p>
-        <button class="like">Like</button>
+        <button class="like">Like</button><span class="likesCounter">${likeNum}</span>
         <button data-charid=${character.id} class="comment comment-btn">Comment</button>
       </li>
     `;
@@ -58,7 +67,6 @@ export const renderCharacters = (characters) => {
 
 export const renderComments = (comments) => {
   comments.then(data => {
-    console.log(data);
     const comments = data;
     let html = '';
     comments.forEach(comment => {
@@ -75,3 +83,8 @@ export const renderComments = (comments) => {
 export const countComments = comments => {
   return comments.length;
 }
+
+
+export const listCounter = (characterItems) => {
+   return characterItems.length
+ };
