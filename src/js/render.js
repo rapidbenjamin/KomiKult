@@ -67,7 +67,6 @@ export const renderCharacters = async (characters) => {
 
 export const renderComments = (comments) => {
   comments.then(data => {
-    console.log(data);
     const comments = data;
     let html = '';
     comments.forEach(comment => {
@@ -87,6 +86,5 @@ export const countComments = comments => {
 
 
 export const listCounter = (characterItems) => {
-  const itemNumber = document.querySelector('.items-number')
-   itemNumber.textContent =  `${characterItems.length}` ;
+   return characterItems.length
  };

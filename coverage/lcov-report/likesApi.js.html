@@ -3,7 +3,7 @@
 <html lang="en">
 
 <head>
-    <title>Code coverage report for api.js</title>
+    <title>Code coverage report for likesApi.js</title>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="prettify.css" />
     <link rel="stylesheet" href="base.css" />
@@ -19,13 +19,13 @@
 <body>
 <div class='wrapper'>
     <div class='pad1'>
-        <h1><a href="index.html">All files</a> api.js</h1>
+        <h1><a href="index.html">All files</a> likesApi.js</h1>
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">25% </span>
+                <span class="strong">33.33% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>2/8</span>
+                <span class='fraction'>4/12</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">25% </span>
+                <span class="strong">33.33% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>2/8</span>
+                <span class='fraction'>4/12</span>
             </div>
         
             
@@ -86,10 +86,17 @@
 <a name='L21'></a><a href='#L21'>21</a>
 <a name='L22'></a><a href='#L22'>22</a>
 <a name='L23'></a><a href='#L23'>23</a>
-<a name='L24'></a><a href='#L24'>24</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L24'></a><a href='#L24'>24</a>
+<a name='L25'></a><a href='#L25'>25</a>
+<a name='L26'></a><a href='#L26'>26</a>
+<a name='L27'></a><a href='#L27'>27</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -98,41 +105,43 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">//  marvel api
-const url = "https://gateway.marvel.com/v1/public/characters?ts=1&amp;apikey=1b4878691fe6328b46c8b8eb4bde2f9f&amp;hash=93ebee6185894b7ebc29d9ed94f988a9";
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">// link to likes and message store api
+// like data
+const projectApiId = "6vHmXZ5YSM4TpBAtn7Kx"
+const likesApiUrl = `https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/${projectApiId}/likes/`;
 &nbsp;
-const characterUrl = "https://gateway.marvel.com/v1/public/characters";
+export const addLike = <span class="fstat-no" title="function not covered" >as</span>ync (itemId) =&gt; {
+  const request = <span class="cstat-no" title="statement not covered" >new Request(likesApiUrl);</span>
+  const response = <span class="cstat-no" title="statement not covered" >await fetch(request, {</span>
+    method: 'POST',
+    body: JSON.stringify({ item_id: `${itemId}`}),
+    headers: {
+      'Content-Type': 'application/json',
+    },
+  });
 &nbsp;
+<span class="cstat-no" title="statement not covered" >  return response;</span>
+};
 &nbsp;
-&nbsp;
-// get the data
-&nbsp;
- class Api {
-<span class="fstat-no" title="function not covered" >  st</span>atic async getCharacters() {
-    const response = <span class="cstat-no" title="statement not covered" >await fetch(url);</span>
+export const getLikesNumber = <span class="fstat-no" title="function not covered" >as</span>ync () =&gt; {
+<span class="cstat-no" title="statement not covered" >  try {</span>
+    const response = <span class="cstat-no" title="statement not covered" >await fetch(likesApiUrl);</span>
     const data = <span class="cstat-no" title="statement not covered" >await response.json();</span>
 <span class="cstat-no" title="statement not covered" >    return data;</span>
+  } catch (error) {
+<span class="cstat-no" title="statement not covered" >    console.log('error')</span>
   }
-&nbsp;
-<span class="fstat-no" title="function not covered" >  st</span>atic async getCharacter(id) {
-    const response = <span class="cstat-no" title="statement not covered" >await fetch(`${characterUrl}/${id}?ts=1&amp;apikey=1b4878691fe6328b46c8b8eb4bde2f9f&amp;hash=93ebee6185894b7ebc29d9ed94f988a9`);</span>
-    const data = <span class="cstat-no" title="statement not covered" >await response.json();</span>
-<span class="cstat-no" title="statement not covered" >    return data;</span>
-  }
-}
-&nbsp;
-export {Api}</pre></td></tr></table></pre>
+};</pre></td></tr></table></pre>
 
                 <div class='push'></div><!-- for sticky footer -->
             </div><!-- /wrapper -->

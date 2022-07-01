@@ -1,4 +1,4 @@
-import { countComments } from "./render";
+import { countComments,listCounter } from "../render";
 
 test("countComments", () => {
   const comments = [
@@ -16,5 +16,22 @@ test("countComments", () => {
     },
   ];
   expect(countComments(comments)).toBe(2);
+}
+);
+
+
+test("item Count", () => {
+  const likes = [
+    {
+      id : 1,
+    },
+    {
+      id : 2,
+    },
+    {
+      id : 3,
+    },
+  ];
+  expect(listCounter(likes)).toBe(3);
 }
 );
