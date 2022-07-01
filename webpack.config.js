@@ -27,6 +27,12 @@ module.exports = {
         test: /\.(png|jpg|gif|svg|eot|ttf|woff)$/,
         type: 'asset/resource'
       },
+      {
+        test: /\.html$/,
+        use: [
+          'html-loader'
+        ]
+      },
     ],
   },
   devServer: {

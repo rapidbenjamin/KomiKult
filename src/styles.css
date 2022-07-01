@@ -28,7 +28,6 @@ body {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  background: var(--swiss-gray);
   font-family: "Lato", sans-serif;
   font-weight: 700;
 }
@@ -53,7 +52,8 @@ body {
 
 .logo {
   height: 40px;
-  width: 100%;
+  width: 200px;
+  margin-left: 3rem;
 }
 
 .nav-bar {
@@ -95,6 +95,17 @@ body {
 
 .charc-list li {
   padding: 0;
+}
+
+.char-image {
+  border-radius: 20px;
+}
+
+.char-name {
+  font-size: 2rem;
+  margin-top: 1rem;
+  font-weight: 700;
+  color: var(--ochre);
 }
 
 .like {

@@ -19,8 +19,8 @@ export const renderCharacters = async (characters) => {
     if ((!character.thumbnail.path.includes('image_not_available')) && (character.description !== '')) {
       html += `
       <li class="char-item" id="${character.id}">
-        <img style="width:100%" src="${character.thumbnail.path}/portrait_uncanny.${character.thumbnail.extension}" alt="${character.name}">
-        <p>${character.name}</p>
+        <img class="char-image" src="${character.thumbnail.path}/portrait_uncanny.${character.thumbnail.extension}" alt="${character.name}">
+        <p class="char-name">${character.name}</p>
         <button class="like">Like</button><span class="likesCounter">${likeNum}</span>
         <button data-charid=${character.id} class="comment comment-btn">Comment</button>
       </li>
