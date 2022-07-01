@@ -4,12 +4,7 @@ const url = "https://gateway.marvel.com/v1/public/characters?ts=1&apikey=1b48786
 const characterUrl = "https://gateway.marvel.com/v1/public/characters";
 
 
- class MarvelAPI {
-  static getMarvelData = async () => {
-    const response = await fetch(url)
-    const data = response.json();
-    return data}
-  }
+
 // get the data
 
  class Api {
@@ -26,4 +21,4 @@ const characterUrl = "https://gateway.marvel.com/v1/public/characters";
   }
 }
 
-export {Api, MarvelAPI}
+export {Api}

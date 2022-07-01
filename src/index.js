@@ -1,39 +1,58 @@
 import './styles.css';
 
-import { DomElement } from "./js/dom";
-import { addLike, getLikesNumber } from "./js/likesApi";
+import { addLike } from "./js/likesApi";
 import {Api} from './js/api';
 import { renderCharacters, renderComments, countComments } from './js/render';
 import { closeModal } from './js/popup';
 import CommentApi from './js/commentAPI';
 
 // Adding Characters to page 
-const mainItemfunction = async () => {
-  try {
-    await DomElement.addCharacterList()
+// const mainItemfunction = async () => {
+//   try {
+//     await DomElement.addCharacterList()
     
-  } catch (error) {
-    console.log("error");
-  } finally {
-    const charactersLists = document.querySelectorAll('.char-item')
-    const likeBtn = document.querySelectorAll('.like');
-    const likeNum = document.querySelectorAll('.likesCounter')
-    DomElement.listCounter(charactersLists)
-    likeBtn.forEach((element, index) => {
-      element.addEventListener("click", async () => {
-        await addLike(+likeBtn[index].parentElement.id)
-        likeNum[index].textContent = `${+likeNum[index].textContent + 1}`
-      })
-    })
-  }
-}
+//   } catch (error) {
+//     console.log("error");
+//   } finally {
+
+//   }
+// }
 
 
+// const fetchData = Api.getCharacters();
+// fetchData.then(async data => {
+//   try {
+//    await renderCharacters(data.data.results);
+//   } 
+//   finally{
+//     likeAdd()
+//   }
+// }
+// )
 const fetchData = Api.getCharacters();
 fetchData.then(data => {
   renderCharacters(data.data.results);
 }
-);
+)
+
+const likeAdd = () => {
+  // const charactersLists = document.querySelectorAll('.char-item')
+  const likeBtn = document.querySelectorAll('.like');
+  console.log(likeBtn)
+  const likeNum = document.querySelectorAll('.likesCounter')
+  console.log(likeNum)
+  // DomElement.listCounter(charactersLists)
+  likeBtn.forEach((element, index) => {
+    console.log(index)
+    element.addEventListener("click", async () => {
+      console.log('clicked')
+      await addLike(+likeBtn[index].parentElement.id)
+      likeNum[index].textContent = `${+likeNum[index].textContent + 1}`
+    })
+  })
+}
+
+
 
 // get close button
 document.getElementById('close-button').addEventListener('click', () => {
@@ -44,8 +63,6 @@ document.getElementById('close-button').addEventListener('click', () => {
 
 const addButton = document.getElementById('add-button');
 
-
-mainItemfunction()
 
 
 addButton.addEventListener('click', async (e) => {
