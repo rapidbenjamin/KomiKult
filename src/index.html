@@ -47,9 +47,22 @@
       </div>
       <h2 id="modal-name" class="modal-name">${name}</h2>
       <div class="comment-section">
+        <div class="comments">
+          <h4 class="comment-count center">
+            Comments (<span id="comment-count"></span>)
+          </h4>
+          <ul id="comment-list" class="display-comments"></ul>
+        </div>
+
         <h2>Add a comment</h2>
         <form id="commentForm">
-          <input type="text" placeholder="Your name" id="addName" />
+          <input type="hidden" id="charid" value="" />
+          <input
+            type="text"
+            placeholder="Your name"
+            class="username"
+            id="addName"
+          />
         </form>
         <textarea
           form="commentForm"
@@ -59,7 +72,7 @@
           rows="10"
           placeholder="Your insights"
         ></textarea>
-        <button id="addComment">Add comment</button>
+        <button type="submit" id="add-button">Add comment</button>
       </div>
     </div>
     <div id="overlay"></div>
