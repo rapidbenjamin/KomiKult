@@ -1,6 +1,6 @@
 import './styles.css';
 import Api from './js/api';
-import { renderCharacters, renderComments } from './js/render';
+import { renderCharacters, renderComments, countComments } from './js/render';
 import { closeModal } from './js/popup';
 import CommentApi from './js/commentAPI';
 
@@ -35,7 +35,14 @@ addButton.addEventListener('click', async (e) => {
 
   const getComments = CommentApi.getComments(charid);
   getComments.then((data) => {
-    document.getElementById('comment-count').innerHTML = data.length;
+    document.getElementById('comment-count').innerHTML = countComments(data);
   });
   renderComments(getComments);
+});
+
+overlay.addEventListener('click', () => {
+  const modals = document.querySelectorAll('.modal.active');
+  modals.forEach(modal => {
+    closeModal(modal);
+  })
 });

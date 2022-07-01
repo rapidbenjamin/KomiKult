@@ -4,7 +4,7 @@ import { openModal } from "./popup";
 
 const charactersList = document.getElementById('charc-list');
 
-const renderCharacters = (characters) => {
+export const renderCharacters = (characters) => {
   let html = '';
   characters.forEach(character => {
     if (!character.thumbnail.path.includes('image_not_available')) {
@@ -72,4 +72,6 @@ export const renderComments = (comments) => {
   });
 }
 
-export { renderCharacters };
+export const countComments = comments => {
+  return comments.length;
+}
