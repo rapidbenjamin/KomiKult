@@ -38,6 +38,4 @@ addButton.addEventListener('click', (e) => {
     document.getElementById('comment-count').innerHTML = data.length;
   });
   renderComments(getComments);
-
-
 });
