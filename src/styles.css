@@ -186,7 +186,7 @@ body {
   width: 80px;
   border: 2px solid #d57a0b;
   position: absolute;
-  left: 50%;
+  left: calc(50% - 40px);
   bottom: 20px;
   border-radius: 8px;
   cursor: pointer;
@@ -315,19 +315,56 @@ box-shadow: rgba(151, 0, 0, 0.2) 0px 8px 24px, rgba(142, 0, 0, 0.2) 0px 16px 86p
 
 .like {
   background-color: transparent;
-  color: blue;
-  border: solid 1px blue;
+  color: var(--ochre);
+  border: solid 1px var(--ochre);
+  width: 70px;
+  height: 35px;
+  border-radius: 10px;
+  font-size: 20px;
+  margin-left: 100px;
+  transition: 0.5s;
 }
 
 .likesCounter {
-  color: var(--white);
-  font-size: 1.4rem;
+  font-size: 2rem;
+  color: var(--ochre);
+  margin: auto 10px;
+  display: inline-block;
+}
+
+.like:hover {
+  background-color: var(--chocolate);
+  color: var(--ochre);
+  border: solid 1px var(--chocolate);
 }
 
 .like:active {
-  background-color: darkcyan;
-  color: blue;
-  border: solid 1px blue;
+  background-color: var(--blood-red);
+  color: var(--ochre);
+  border: solid 1px var(--blood-red);
+}
+
+.comment {
+  transition: 0.5s;
+  background-color: transparent;
+  color: var(--ochre);
+  border: solid 1px var(--ochre);
+  width: 100px;
+  height: 35px;
+  border-radius: 10px;
+  font-size: 20px;
+}
+
+.comment:hover {
+  background-color: var(--chocolate);
+  color: var(--ochre);
+  border: solid 1px var(--chocolate);
+}
+
+.comment:active{
+  background-color: var(--blood-red);
+  color: var(--ochre);
+  border: solid 1px var(--blood-red);
 }
 
 .modal {
@@ -502,7 +539,7 @@ box-shadow: rgba(151, 0, 0, 0.2) 0px 8px 24px, rgba(142, 0, 0, 0.2) 0px 16px 86p
   color: var(--pale-silver);
   font-family: "HL-Brush-3BK", sans-serif;
   padding: 60px 0;
-  margin-top: 40rem;
+  margin-top: 10rem;
   background: linear-gradient(135deg,
       rgba(0, 0, 0, 0.5) 75%,
       rgba(105, 8, 1, 0.6) 10%), url(./assets/marvel-two.jpg);
