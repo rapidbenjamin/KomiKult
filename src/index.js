@@ -1,7 +1,7 @@
 import './styles.css';
 
 import { addLike } from './js/likesApi';
-import { Api } from './js/api';
+import Api from './js/api.js';
 import {
   renderCharacters, renderComments, countComments, listCounter, footerCopyright,
 } from './js/render';
@@ -9,10 +9,8 @@ import { closeModal } from './js/popup';
 import CommentApi from './js/commentAPI';
 
 const likeAdd = () => {
-  // const charactersLists = document.querySelectorAll('.char-item')
   const likeBtn = document.querySelectorAll('.like');
   const likeNum = document.querySelectorAll('.likesCounter');
-  // DomElement.listCounter(charactersLists)
   likeBtn.forEach((element, index) => {
     element.addEventListener('click', async () => {
       await addLike(+likeBtn[index].parentElement.id);

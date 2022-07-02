@@ -4,8 +4,8 @@ const url = 'https://gateway.marvel.com/v1/public/characters?ts=1&apikey=1b48786
 const characterUrl = 'https://gateway.marvel.com/v1/public/characters';
 
 // get the data
-/* eslint-disable import/prefer-default-export */
-class Api {
+
+export default class Api {
   static async getCharacters() {
     const response = await fetch(url);
     const data = await response.json();
@@ -18,5 +18,3 @@ class Api {
     return data;
   }
 }
-
-export { Api };

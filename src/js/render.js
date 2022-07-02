@@ -1,4 +1,4 @@
-import { Api } from './api';
+import Api from './api';
 import { getLikesNumber } from './likesApi';
 import CommentApi from './commentAPI';
 
