@@ -1,8 +1,8 @@
 import './styles.css';
 
 import { addLike } from "./js/likesApi";
-import {Api} from './js/api';
-import { renderCharacters, renderComments, countComments,listCounter,footerCopyright } from './js/render';
+import { Api } from './js/api';
+import { renderCharacters, renderComments, countComments, listCounter, footerCopyright } from './js/render';
 import { closeModal } from './js/popup';
 import CommentApi from './js/commentAPI';
 
@@ -10,14 +10,14 @@ import CommentApi from './js/commentAPI';
 const fetchData = Api.getCharacters();
 fetchData.then(async data => {
   try {
-   await renderCharacters(data.data.results);
-   await footerCopyright(data.attributionText)
-  } 
-  finally{
+    await renderCharacters(data.data.results);
+    await footerCopyright(data.attributionText)
+  }
+  finally {
     likeAdd()
     const items = document.querySelectorAll('.char-item')
     const itemNumber = document.querySelector('.items-number')
-    itemNumber.textContent =  `${listCounter(items)}` ;
+    itemNumber.textContent = `${listCounter(items)}`;
   }
 }
 )
@@ -74,3 +74,21 @@ overlay.addEventListener('click', () => {
   })
 });
 
+// Page load animation effect
+const hero = document.querySelector('.hero');
+const slider = document.querySelector('.slider');
+const logo = document.querySelector('#logo');
+const nav = document.querySelector('#navItems');
+const headline = document.querySelector('.headline');
+const spidey = document.querySelector('.spidey-container');
+const list = document.querySelector('.charc-list');
+
+const tl = new TimelineMax();
+
+tl.fromTo(hero, 1, { height: '0%' }, { height: '80%', ease: Power2.easeInOut })
+  .fromTo(hero, 1.2, { width: '100%' }, { width: '80%', ease: Power2.easeInOut })
+  .fromTo(slider, 1.2, { x: '-100%' }, { x: '0%', ease: Power2.easeInOut }, "-=1.2")
+  .fromTo(logo, 0.5, { opacity: 0, x: -30 }, { opacity: 1, x: 0 }, "-=0.5")
+  .fromTo(nav, 0.5, { opacity: 0, x: 30 }, { opacity: 1, x: 0 }, "-=0.5")
+  .fromTo(headline, 0.5, { opacity: 0, x: 100 }, { opacity: 1, x: 0 }, "-=0.5")
+  .set(spidey, 0.5, { zIndex: -1 }, { opacity: 0, x: -200 }, { opacity: 1, x: 0 }, "-=0.5");

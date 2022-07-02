@@ -41,6 +41,7 @@ html {
 body {
   font-family: "Lato", sans-serif;
   font-weight: 700;
+  background: rgb(0, 0, 0);
 }
 
 .slider {
@@ -50,12 +51,10 @@ body {
   width: 100%;
   height: 100vh;
   background: rgb(0, 0, 0);
-  background: linear-gradient(
-    124deg,
-    rgba(0, 0, 0, 1) 25%,
-    rgb(98, 98, 98) 100%
-  );
-  z-index: -1;
+  background: linear-gradient(135deg,
+      rgba(0, 0, 0, 1) 10%,
+      rgba(105, 8, 1, 1) 75%);
+  z-index: -10;
 }
 
 .header {
@@ -63,7 +62,6 @@ body {
   font-size: 1.5rem;
   font-weight: 700;
   letter-spacing: 0.1rem;
-  z-index: 1;
 }
 
 .nav-bar {
@@ -72,8 +70,15 @@ body {
   align-items: center;
   padding-right: 10rem;
   padding-bottom: -10rem;
+  padding-top: 2rem;
   width: 100%;
-  min-height: 10vh;
+  background: rgb(0, 0, 0) url('./assets/deadpool-navbar.jpg') no-repeat center center;
+  background-size: cover;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+  min-height: 12vh;
+  position: fixed;
+  top: 0;
+  z-index: 30;
 }
 
 .logo-container {
@@ -81,11 +86,11 @@ body {
   align-items: center;
   justify-content: center;
   margin-left: 10rem;
-  margin-top: 1rem;
+  margin-top: 0;
 }
 
 .logo {
-  width: 70px;
+  width: 80px;
   margin-right: 2rem;
 }
 
@@ -98,7 +103,7 @@ body {
 
 .komikult {
   font-family: "HL-Brush-3BK", sans-serif;
-  font-size: 1.8rem;
+  font-size: 1.9rem;
   color: var(--white);
   margin-bottom: 0.8rem;
   margin-left: -0.5rem;
@@ -112,17 +117,22 @@ body {
   color: var(--white);
   font-family: "HL-Brush-3BK", sans-serif;
   font-weight: 900;
+  margin-bottom: 1rem;
 }
 
 .nav-item a {
   text-transform: uppercase;
   text-decoration: none;
   color: var(--white);
+  transition: 0.4s all ease-in-out;
+}
+.nav-item a:hover {
+  color: #ea8e48;
 }
 
 .items-number {
   font-size: 2rem;
-  color: #ca946a;
+  color: #ea8e48;
 }
 
 .hero-section {
@@ -130,12 +140,14 @@ body {
   justify-content: center;
   align-items: center;
   height: 80vh;
+  margin-top: 10rem;
 }
 
 .hero {
   height: 60%;
-  width: 80%;
+  width: 100%;
   position: relative;
+  z-index: -2;
 }
 
 .hero img {
@@ -146,11 +158,11 @@ body {
 
 .headline {
   position: absolute;
-  top: 78%;
-  left: 0%;
-  font-size: 3.5rem;
+  top: 68%;
+  left: 10%;
+  font-size: 5.5rem;
   transform: translate(-20%, 70%) rotate(15deg);
-  color: #afafaf;
+  color: #cdcdcd;
   font-family: "HL-Brush-3BK", sans-serif;
   text-transform: uppercase;
   text-decoration: underline;
@@ -168,9 +180,42 @@ body {
   opacity: 0.4;
 }
 
+.spidey-container {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  width: 100%;
+  height: 50vh;
+  margin-top: -5rem;
+}
+
+.spidey {
+  width: 420px;
+  height: 447px;
+  z-index: -1;
+}
+
+.char-heading {
+  font-size: 6.5rem;
+  color: #9d0000;
+  font-family: "HL-Brush-3BK", sans-serif;
+  text-transform: uppercase;
+  text-align: center;
+  position: relative;
+  top: -15rem;
+}
+
+.solid {
+  margin: 0 auto;
+  width: 10%;
+  border: 3px solid #9d0000;
+  position: relative;
+  top: -13rem;
+}
+
 .container {
   padding: 0 50px;
-  margin-top: 10rem;
+  margin-top: -5rem;
 }
 
 .charc-list {
@@ -214,7 +259,7 @@ body {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%) scale(0);
-  transition: 0.3s all ease-in-out;
+  transition: 0.3s ease-in-out;
   border: 1px solid black;
   border-radius: 10px;
   z-index: 80;
@@ -277,12 +322,15 @@ body {
 #overlay {
   position: fixed;
   opacity: 0;
-  transition: 0.3s all ease-in-out;
+  transition: 0.3s ease-in-out;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(0, 0, 0, 0.7);
+  background: rgb(0, 0, 0);
+  background: linear-gradient(135deg,
+      rgba(0, 0, 0, 0.8) 10%,
+      rgba(105, 8, 1, 0.5) 75%);
   pointer-events: none;
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
@@ -313,18 +361,6 @@ body {
   max-width: 80%;
 }
 
-.video-container {
-  /* position: absolute;
-  top: 0;
-  left: 0; */
-  width: 100%;
-  /* z-index: -2; */
-}
-
-video {
-  width: 100%;
-}
-
 .about {
   color: var(--pale-silver);
   padding: 60px 0;
@@ -334,6 +370,7 @@ video {
 .about-container {
   margin-top: 0;
 }
+
 .about-header {
   text-align: center;
   font-size: 50px;
