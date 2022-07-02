@@ -8,6 +8,8 @@ A comic characters list app that displays Marvel characters. It also allows you 
 - Webpack 
 ## Live Demo
 - Not Available 
+## Video
+- [Loom Video](https://github.com/shaqdeff)
 ## Getting Started
 To get a local copy up and running follow these simple steps.
 ### Prerequisites
