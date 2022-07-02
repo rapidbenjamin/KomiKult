@@ -319,6 +319,11 @@ box-shadow: rgba(151, 0, 0, 0.2) 0px 8px 24px, rgba(142, 0, 0, 0.2) 0px 16px 86p
   border: solid 1px blue;
 }
 
+.likesCounter {
+  color: var(--white);
+  font-size: 1.4rem;
+}
+
 .like:active {
   background-color: darkcyan;
   color: blue;
