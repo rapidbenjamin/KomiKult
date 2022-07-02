@@ -9,19 +9,17 @@ const charactersList = document.getElementById('charc-list');
 export const renderCharacters = async (characters) => {
   let html = '';
   const likesNumber = await getLikesNumber() || [];
-  let likeNum;
-  characters.forEach((character, index) => {
-    if (likesNumber[index] === undefined || likesNumber[index] === null) {
-      likeNum = "0"
-    } else {
-      likeNum = likesNumber[index].likes
-    }
+  
+  characters.forEach((character) => {
+    let likeNum;
+    likeNum = likesNumber.find(like => like.item_id == character.id);
+    likeNum = likeNum ? likeNum.likes : 0;
     if ((!character.thumbnail.path.includes('image_not_available')) && (character.description !== '')) {
       html += `
       <li class="char-item" id="${character.id}">
         <img class="char-image" src="${character.thumbnail.path}/portrait_uncanny.${character.thumbnail.extension}" alt="${character.name}">
         <p class="char-name">${character.name}</p>
-        <button class="like">Like</button><span class="likesCounter">${likeNum}</span>
+        <button data-charid=${character.id} class="like">Like</button><span class="likesCounter">${likeNum}</span>
         <button data-charid=${character.id} class="comment comment-btn">Comment</button>
       </li>
     `;
