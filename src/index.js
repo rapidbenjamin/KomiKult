@@ -81,7 +81,7 @@ const logo = document.querySelector('#logo');
 const nav = document.querySelector('#navItems');
 const headline = document.querySelector('.headline');
 const spidey = document.querySelector('.spidey-container');
-const list = document.querySelector('.charc-list');
+const scrollBtn = document.querySelector('.scroll-down');
 
 const tl = new TimelineMax();
 
@@ -91,4 +91,5 @@ tl.fromTo(hero, 1, { height: '0%' }, { height: '80%', ease: Power2.easeInOut })
   .fromTo(logo, 0.5, { opacity: 0, x: -30 }, { opacity: 1, x: 0 }, "-=0.5")
   .fromTo(nav, 0.5, { opacity: 0, x: 30 }, { opacity: 1, x: 0 }, "-=0.5")
   .fromTo(headline, 0.5, { opacity: 0, x: 100 }, { opacity: 1, x: 0 }, "-=0.5")
+  .fromTo(scrollBtn, 0.5, { opacity: 0, x: -300 }, { opacity: 1, x: 0 }, "-=0.5")
   .set(spidey, 0.5, { zIndex: -1 }, { opacity: 0, x: -200 }, { opacity: 1, x: 0 }, "-=0.5");

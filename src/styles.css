@@ -36,6 +36,7 @@
 
 html {
   font-size: 62.5%;
+  scroll-behavior: smooth;
 }
 
 body {
@@ -178,6 +179,70 @@ body {
   left: 0;
   top: 0;
   opacity: 0.4;
+}
+
+.scroll-down {
+  height: 30px;
+  width: 80px;
+  border: 2px solid #d57a0b;
+  position: absolute;
+  left: 50%;
+  bottom: 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s all ease-in-out;
+}
+
+.scroll-down:hover {
+  background: #013c5a;
+  color: #c7834f;
+}
+
+.scroll-down:active {
+  background: #02293c;
+  color: #c7834f;
+}
+
+.scroll-down::before,
+.scroll-down::after {
+  content: "";
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  border: 2px solid #d6c8bf;
+  height: 10px;
+  width: 10px;
+  transform: translate(-50%, -100%) rotate(45deg);
+  border-top: transparent;
+  border-left: transparent;
+  animation: scroll-down 1s ease-in-out infinite;
+}
+
+.scroll-down::after{
+  top: 30%;
+  animation-delay: 0.3s;
+}
+
+@keyframes scroll-down {
+  0% {
+    opacity: 0;
+  }
+  30% {
+    opacity: 1;
+  }
+  60% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    top: 90%;
+  }
+}
+
+#scroll-dest {
+  position: relative;
+  bottom: 25rem;
+  height: 0;
 }
 
 .spidey-container {
