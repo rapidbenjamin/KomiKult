@@ -297,6 +297,7 @@ body {
 }
 
 .char-image {
+box-shadow: rgba(151, 0, 0, 0.2) 0px 8px 24px, rgba(142, 0, 0, 0.2) 0px 16px 86px, rgba(159, 0, 0, 0.2) 0px 2px 20px;
   border-radius: 20px;
 }
 
@@ -428,24 +429,34 @@ body {
 
 .about {
   color: var(--pale-silver);
+  font-family: "HL-Brush-3BK", sans-serif;
   padding: 60px 0;
-  background-color: var(--sepia);
+  margin-top: 40rem;
+  background: linear-gradient(135deg,
+      rgba(0, 0, 0, 0.5) 75%,
+      rgba(105, 8, 1, 0.6) 10%), url(./assets/marvel-two.jpg);
 }
 
 .about-container {
   margin-top: 0;
+  width: 100%;
 }
 
 .about-header {
   text-align: center;
   font-size: 50px;
   text-transform: uppercase;
+  letter-spacing: 5px;
+  margin: 0 auto;
 }
 
 hr {
-  width: 13%;
-  margin-top: -25px;
-  border-color: var(--pale-silver);
+  width: 10px;
+  margin: 0 auto;
+  width: 10%;
+  border: 3px solid #9d0000;
+  position: relative;
+  top: 0.5rem;
 }
 
 .about-p {
@@ -453,6 +464,7 @@ hr {
   text-align: center;
   margin: 50px auto 0;
   font-size: 22px;
+  font-family: "Stockholm", sans-serif;
 }
 
 footer {
