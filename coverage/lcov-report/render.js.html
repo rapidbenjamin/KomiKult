@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">16.66% </span>
+                <span class="strong">18.6% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>7/42</span>
+                <span class='fraction'>8/43</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>0/10</span>
-            </div>
-        
-            
-            <div class='fl pad1y space-right2'>
-                <span class="strong">18.18% </span>
-                <span class="quiet">Functions</span>
-                <span class='fraction'>2/11</span>
+                <span class='fraction'>0/12</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">16.66% </span>
+                <span class="quiet">Functions</span>
+                <span class='fraction'>2/12</span>
+            </div>
+        
+            
+            <div class='fl pad1y space-right2'>
+                <span class="strong">18.6% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>7/42</span>
+                <span class='fraction'>8/43</span>
             </div>
         
             
@@ -152,8 +152,7 @@
 <a name='L87'></a><a href='#L87'>87</a>
 <a name='L88'></a><a href='#L88'>88</a>
 <a name='L89'></a><a href='#L89'>89</a>
-<a name='L90'></a><a href='#L90'>90</a>
-<a name='L91'></a><a href='#L91'>91</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L90'></a><a href='#L90'>90</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -198,11 +197,6 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -243,8 +237,12 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import {Api} from "./api";
-import {getLikesNumber } from "./likesApi";
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { Api } from "./api";
+import { getLikesNumber } from "./likesApi";
 import CommentApi from "./commentAPI";
 &nbsp;
 import { openModal } from "./popup";
@@ -253,19 +251,19 @@ const charactersList = document.getElementById('charc-list');
 &nbsp;
 export const renderCharacters = <span class="fstat-no" title="function not covered" >as</span>ync (characters) =&gt; {
   let html = <span class="cstat-no" title="statement not covered" >'';</span>
-  const likesNumber = <span class="cstat-no" title="statement not covered" >await getLikesNumber();</span>
+  const likesNumber = <span class="cstat-no" title="statement not covered" >await getLikesNumber() || [];</span>
   let likeNum;
-<span class="cstat-no" title="statement not covered" >  characters.forEach(<span class="fstat-no" title="function not covered" >(c</span>haracter,index) =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >    if (likesNumber[index] === undefined || likesNumber[index] === null ) {</span>
+<span class="cstat-no" title="statement not covered" >  characters.forEach(<span class="fstat-no" title="function not covered" >(c</span>haracter, index) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >    if (likesNumber[index] === undefined || likesNumber[index] === null) {</span>
 <span class="cstat-no" title="statement not covered" >      likeNum = "0"</span>
-   } else {
-<span class="cstat-no" title="statement not covered" >       likeNum = likesNumber[index].likes</span>
-   }
-<span class="cstat-no" title="statement not covered" >    if (!character.thumbnail.path.includes('image_not_available')) {</span>
+    } else {
+<span class="cstat-no" title="statement not covered" >      likeNum = likesNumber[index].likes</span>
+    }
+<span class="cstat-no" title="statement not covered" >    if ((!character.thumbnail.path.includes('image_not_available')) &amp;&amp; (character.description !== '')) {</span>
 <span class="cstat-no" title="statement not covered" >      html += `</span>
       &lt;li class="char-item" id="${character.id}"&gt;
-        &lt;img style="width:100%" src="${character.thumbnail.path}/portrait_uncanny.${character.thumbnail.extension}" alt="${character.name}"&gt;
-        &lt;p&gt;${character.name}&lt;/p&gt;
+        &lt;img class="char-image" src="${character.thumbnail.path}/portrait_uncanny.${character.thumbnail.extension}" alt="${character.name}"&gt;
+        &lt;p class="char-name"&gt;${character.name}&lt;/p&gt;
         &lt;button class="like"&gt;Like&lt;/button&gt;&lt;span class="likesCounter"&gt;${likeNum}&lt;/span&gt;
         &lt;button data-charid=${character.id} class="comment comment-btn"&gt;Comment&lt;/button&gt;
       &lt;/li&gt;
@@ -287,12 +285,7 @@ export const renderCharacters = <span class="fstat-no" title="function not cover
 <span class="cstat-no" title="statement not covered" >        document.getElementById('modal-img').src = `${character.thumbnail.path}/portrait_incredible.${character.thumbnail.extension}`;</span>
         // update the modal description
         const characterDescription = <span class="cstat-no" title="statement not covered" >document.getElementById('modal-desc');</span>
-<span class="cstat-no" title="statement not covered" >        if (character.description === '') {</span>
-<span class="cstat-no" title="statement not covered" >          document.getElementById('modal-desc').innerHTML = 'No description available for this character.';</span>
-        }
-        else {
-<span class="cstat-no" title="statement not covered" >          characterDescription.innerHTML = character.description;</span>
-        }
+<span class="cstat-no" title="statement not covered" >        characterDescription.innerHTML = character.description;</span>
 &nbsp;
         //display the character name
 <span class="cstat-no" title="statement not covered" >        document.getElementById('modal-name').innerHTML = character.name;</span>
@@ -331,16 +324,20 @@ export const countComments = comments =&gt; {
 &nbsp;
 &nbsp;
 export const listCounter = (characterItems) =&gt; {
-   return characterItems.length
- };
-&nbsp;</pre></td></tr></table></pre>
+  return characterItems.length
+};
+&nbsp;
+export const footerCopyright = <span class="fstat-no" title="function not covered" >(c</span>opyright)  =&gt; {
+  const copyrightElement = <span class="cstat-no" title="statement not covered" >document.getElementById("copyright")</span>
+<span class="cstat-no" title="statement not covered" >  copyrightElement.textContent = copyright;</span>
+}</pre></td></tr></table></pre>
 
                 <div class='push'></div><!-- for sticky footer -->
             </div><!-- /wrapper -->
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at Fri Jul 01 2022 17:02:06 GMT+0300 (غرينتش+٠٣:٠٠)
+                at Sat Jul 02 2022 01:15:10 GMT+0300 (East Africa Time)
             </div>
         <script src="prettify.js"></script>
         <script>

@@ -7,6 +7,13 @@
   font-style: normal;
 }
 
+@font-face {
+  font-family: "HL-Brush-3BK";
+  src: url("./fonts/HL-Brush-3BK.ttf.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
 :root {
   --blood-red: #690801;
   --indigo-dye: #013c5a;
@@ -17,7 +24,14 @@
   --black-bean: #481702;
   --chocolate: #713509;
   --sepia: #7c4a15;
+  --white: #ffffff;
   --flex-display: flex;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 html {
@@ -25,58 +39,133 @@ html {
 }
 
 body {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
   font-family: "Lato", sans-serif;
   font-weight: 700;
 }
 
+.slider {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: rgb(0, 0, 0);
+  background: linear-gradient(
+    124deg,
+    rgba(0, 0, 0, 1) 25%,
+    rgb(98, 98, 98) 100%
+  );
+  z-index: -1;
+}
+
 .header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1rem;
-  background: var(--blood-red);
   font-family: "Stockholm", sans-serif;
   font-size: 1.5rem;
   font-weight: 700;
   letter-spacing: 0.1rem;
-  text-transform: uppercase;
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
   z-index: 1;
 }
 
-.logo {
-  height: 40px;
-  width: 200px;
-  margin-left: 3rem;
+.nav-bar {
+  display: var(--flex-display);
+  justify-content: space-between;
+  align-items: center;
+  padding-right: 10rem;
+  padding-bottom: -10rem;
+  width: 100%;
+  min-height: 10vh;
 }
 
-.nav-bar {
-  padding-right: 3rem;
+.logo-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 10rem;
+  margin-top: 1rem;
+}
+
+.logo {
+  width: 70px;
+  margin-right: 2rem;
+}
+
+.logo-line {
+  font-family: "Lato", sans-serif;
+  color: var(--white);
+  font-size: 1.8rem;
+  font-weight: 900;
+}
+
+.komikult {
+  font-family: "HL-Brush-3BK", sans-serif;
+  font-size: 1.8rem;
+  color: var(--white);
+  margin-bottom: 0.8rem;
+  margin-left: -0.5rem;
 }
 
 .nav-items {
   display: flex;
   align-items: center;
-  gap: 2rem;
+  gap: 2.3rem;
   list-style: none;
-  color: var(--pale-silver);
+  color: var(--white);
+  font-family: "HL-Brush-3BK", sans-serif;
+  font-weight: 900;
 }
 
 .nav-item a {
+  text-transform: uppercase;
   text-decoration: none;
-  color: var(--pale-silver);
+  color: var(--white);
 }
 
 .items-number {
-  font-size: 1.6rem;
-  font-weight: 700;
-  color: var(--pale-silver);
+  font-size: 2rem;
+  color: #ca946a;
+}
+
+.hero-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80vh;
+}
+
+.hero {
+  height: 60%;
+  width: 80%;
+  position: relative;
+}
+
+.hero img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.headline {
+  position: absolute;
+  top: 78%;
+  left: 0%;
+  font-size: 3.5rem;
+  transform: translate(-20%, 70%) rotate(15deg);
+  color: #afafaf;
+  font-family: "HL-Brush-3BK", sans-serif;
+  text-transform: uppercase;
+  text-decoration: underline;
+  z-index: 3;
+}
+
+.hero::after {
+  content: "";
+  background: black;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 0.4;
 }
 
 .container {
@@ -263,7 +352,6 @@ hr {
   margin: 50px auto 0;
   font-size: 22px;
 }
-
 
 footer {
   padding: 17px 0;
