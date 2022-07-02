@@ -24,7 +24,7 @@
   --black-bean: #481702;
   --chocolate: #713509;
   --sepia: #7c4a15;
-  --white: #ffffff;
+  --white: #fff;
   --flex-display: flex;
 }
 
@@ -52,9 +52,12 @@ body {
   width: 100%;
   height: 100vh;
   background: rgb(0, 0, 0);
-  background: linear-gradient(135deg,
+  background:
+    linear-gradient(
+      135deg,
       rgba(0, 0, 0, 1) 10%,
-      rgba(105, 8, 1, 1) 75%);
+      rgba(105, 8, 1, 1) 75%
+    );
   z-index: -10;
 }
 
@@ -75,7 +78,7 @@ body {
   width: 100%;
   background: rgb(0, 0, 0) url('./assets/deadpool-navbar.jpg') no-repeat center center;
   background-size: cover;
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
   min-height: 12vh;
   position: fixed;
   top: 0;
@@ -127,6 +130,7 @@ body {
   color: var(--white);
   transition: 0.4s all ease-in-out;
 }
+
 .nav-item a:hover {
   color: #ea8e48;
 }
@@ -218,7 +222,7 @@ body {
   animation: scroll-down 1s ease-in-out infinite;
 }
 
-.scroll-down::after{
+.scroll-down::after {
   top: 30%;
   animation-delay: 0.3s;
 }
@@ -227,12 +231,15 @@ body {
   0% {
     opacity: 0;
   }
+
   30% {
     opacity: 1;
   }
+
   60% {
     opacity: 1;
   }
+
   100% {
     opacity: 0;
     top: 90%;
@@ -297,13 +304,13 @@ body {
 }
 
 .char-image {
-box-shadow: rgba(151, 0, 0, 0.2) 0px 8px 24px, rgba(142, 0, 0, 0.2) 0px 16px 86px, rgba(159, 0, 0, 0.2) 0px 2px 20px;
+  box-shadow: rgba(151, 0, 0, 0.2) 0 8px 24px, rgba(142, 0, 0, 0.2) 0 16px 86px, rgba(159, 0, 0, 0.2) 0 2px 20px;
   border-radius: 20px;
 }
 
 .char-image:hover {
-  transform:scale(1.05);
-  transition: 0.5s ease-in-out;;
+  transform: scale(1.05);
+  transition: 0.5s ease-in-out;
 }
 
 .char-name {
@@ -361,7 +368,7 @@ box-shadow: rgba(151, 0, 0, 0.2) 0px 8px 24px, rgba(142, 0, 0, 0.2) 0px 16px 86p
   border: solid 1px var(--chocolate);
 }
 
-.comment:active{
+.comment:active {
   background-color: var(--blood-red);
   color: var(--ochre);
   border: solid 1px var(--blood-red);
@@ -376,7 +383,6 @@ box-shadow: rgba(151, 0, 0, 0.2) 0px 8px 24px, rgba(142, 0, 0, 0.2) 0px 16px 86p
   border: 1px solid black;
   border-radius: 10px;
   z-index: 80;
-  background-color: white;
   width: 80rem;
   max-width: 80%;
   height: 80vh;
@@ -384,15 +390,12 @@ box-shadow: rgba(151, 0, 0, 0.2) 0px 8px 24px, rgba(142, 0, 0, 0.2) 0px 16px 86p
   overflow-x: hidden;
   background-color: var(--rufous);
   color: var(--pale-silver);
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
 }
 
 .modal::-webkit-scrollbar {
   display: none;
-}
-/* Hide scrollbar for IE, Edge and Firefox */
-.modal {
-  -ms-overflow-style: none;  /* IE and Edge */
-  scrollbar-width: none;  /* Firefox */
 }
 
 .modal.active {
@@ -419,7 +422,6 @@ box-shadow: rgba(151, 0, 0, 0.2) 0px 8px 24px, rgba(142, 0, 0, 0.2) 0px 16px 86p
   display: var(--flex-display);
   justify-content: center;
   align-items: center;
-
 }
 
 .modal-img {
@@ -434,7 +436,7 @@ box-shadow: rgba(151, 0, 0, 0.2) 0px 8px 24px, rgba(142, 0, 0, 0.2) 0px 16px 86p
   font-weight: 900;
   font-size: 25px;
   color: var(--pale-silver);
-  font-family: 'HL-Brush-3BK';
+  font-family: 'HL-Brush-3BK', Times, serif;
   width: 200px;
 }
 
@@ -446,7 +448,7 @@ box-shadow: rgba(151, 0, 0, 0.2) 0px 8px 24px, rgba(142, 0, 0, 0.2) 0px 16px 86p
   font-size: 1.8rem;
   line-height: 1.2;
   letter-spacing: 0.5px;
-  font-family: 'Stockholm';
+  font-family: 'Stockholm', Times, serif;
 }
 
 #overlay {
@@ -458,9 +460,12 @@ box-shadow: rgba(151, 0, 0, 0.2) 0px 8px 24px, rgba(142, 0, 0, 0.2) 0px 16px 86p
   right: 0;
   bottom: 0;
   background: rgb(0, 0, 0);
-  background: linear-gradient(135deg,
+  background:
+    linear-gradient(
+      135deg,
       rgba(0, 0, 0, 0.8) 10%,
-      rgba(105, 8, 1, 0.5) 75%);
+      rgba(105, 8, 1, 0.5) 75%
+    );
   pointer-events: none;
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
@@ -480,26 +485,26 @@ box-shadow: rgba(151, 0, 0, 0.2) 0px 8px 24px, rgba(142, 0, 0, 0.2) 0px 16px 86p
   left: 27rem;
   bottom: 25rem;
   font-size: 15px;
-  font-family: 'Stockholm';
+  font-family: 'Stockholm', Times, serif;
   margin-top: 15px;
 }
 
 .comment-section input {
   margin-bottom: 2rem;
-    border-radius: 4px;
-    border: solid 1px black;
-    height: 33px;
-    width: 302px;
-    background-color: var(--pale-silver);
-    font-size: 18px;
-    font-family: 'Stockholm';
-    text-align: center;
+  border-radius: 4px;
+  border: solid 1px black;
+  height: 33px;
+  width: 302px;
+  background-color: var(--pale-silver);
+  font-size: 18px;
+  font-family: 'Stockholm', Times, serif;
+  text-align: center;
 }
 
 .comment-section input::placeholder {
   text-align: center;
   font-size: 18px;
-  font-family: 'Stockholm';
+  font-family: 'Stockholm', Times, serif;
   background-color: var(--pale-silver);
 }
 
@@ -509,9 +514,8 @@ box-shadow: rgba(151, 0, 0, 0.2) 0px 8px 24px, rgba(142, 0, 0, 0.2) 0px 16px 86p
   max-width: 80%;
   text-align: center;
   height: 150px;
-  text-align: center;
   font-size: 18px;
-  font-family: 'Stockholm';
+  font-family: 'Stockholm', Times, serif;
   background-color: var(--pale-silver);
 }
 
@@ -531,7 +535,7 @@ box-shadow: rgba(151, 0, 0, 0.2) 0px 8px 24px, rgba(142, 0, 0, 0.2) 0px 16px 86p
   border-radius: 30px;
   background-color: var(--pale-silver);
   font-size: 17px;
-  font-family: 'Stockholm';
+  font-family: 'Stockholm', Times, serif;
   color: var(--indigo-dye);
 }
 
@@ -540,9 +544,13 @@ box-shadow: rgba(151, 0, 0, 0.2) 0px 8px 24px, rgba(142, 0, 0, 0.2) 0px 16px 86p
   font-family: "HL-Brush-3BK", sans-serif;
   padding: 60px 0;
   margin-top: 10rem;
-  background: linear-gradient(135deg,
+  background:
+    linear-gradient(
+      135deg,
       rgba(0, 0, 0, 0.5) 75%,
-      rgba(105, 8, 1, 0.6) 10%), url(./assets/marvel-two.jpg);
+      rgba(105, 8, 1, 0.6) 10%
+    ),
+    url(./assets/marvel-two.jpg);
 }
 
 .about-container {
@@ -559,7 +567,6 @@ box-shadow: rgba(151, 0, 0, 0.2) 0px 8px 24px, rgba(142, 0, 0, 0.2) 0px 16px 86p
 }
 
 hr {
-  width: 10px;
   margin: 0 auto;
   width: 10%;
   border: 3px solid #9d0000;
