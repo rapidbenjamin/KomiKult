@@ -1,4 +1,4 @@
-const commentUrl = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/gZumCAVMg7210Q6sIqx3/comments'
+const commentUrl = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/gZumCAVMg7210Q6sIqx3/comments';
 export default class CommentApi {
   static async getComments(id) {
     const response = await fetch(`${commentUrl}/?item_id=${id}`);
@@ -20,5 +20,3 @@ export default class CommentApi {
     });
   }
 }
-
-
