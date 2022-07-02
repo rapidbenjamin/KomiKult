@@ -9,7 +9,7 @@ A comic characters list app that displays Marvel characters. It also allows you 
 ## Live Demo
 - Not Available 
 ## Video
-- [Loom Video](https://github.com/shaqdeff)
+- [Loom Video](https://www.loom.com/share/af0372bbe7704093b08f1c9e4006bc1c)
 ## Getting Started
 To get a local copy up and running follow these simple steps.
 ### Prerequisites
@@ -20,7 +20,7 @@ To get a local copy up and running follow these simple steps.
 - With git, clone the code to your machine, or download a ZIP of all the files directly.
 - [Download the ZIP file from this location](https://github.com/shaqdeff/Leaderboard/archive/refs/heads/develop.zip) or run the following [git](https://git-scm.com/) command to clone the files to your machine:
 ```
-git clone https://github.com/shaqdeff/Leaderboard.git
+git clone https://github.com/shaqdeff/KomiKult.git
 ```
 - Once the files are on your machine, open the **Leaderboard** folder in [Visual Studio Code](https://code.visualstudio.com/download).
 ## Deployment
