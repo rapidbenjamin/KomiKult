@@ -301,6 +301,11 @@ box-shadow: rgba(151, 0, 0, 0.2) 0px 8px 24px, rgba(142, 0, 0, 0.2) 0px 16px 86p
   border-radius: 20px;
 }
 
+.char-image:hover {
+  transform:scale(1.05);
+  transition: 0.5s ease-in-out;;
+}
+
 .char-name {
   font-size: 2rem;
   margin-top: 1rem;
@@ -335,6 +340,17 @@ box-shadow: rgba(151, 0, 0, 0.2) 0px 8px 24px, rgba(142, 0, 0, 0.2) 0px 16px 86p
   height: 80vh;
   overflow-y: scroll;
   overflow-x: hidden;
+  background-color: var(--rufous);
+  color: var(--pale-silver);
+}
+
+.modal::-webkit-scrollbar {
+  display: none;
+}
+/* Hide scrollbar for IE, Edge and Firefox */
+.modal {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
 }
 
 .modal.active {
@@ -361,18 +377,23 @@ box-shadow: rgba(151, 0, 0, 0.2) 0px 8px 24px, rgba(142, 0, 0, 0.2) 0px 16px 86p
   display: var(--flex-display);
   justify-content: center;
   align-items: center;
+
 }
 
 .modal-img {
-  padding: 2rem;
+  border-radius: 11px;
+  margin: 2rem;
 }
 
 .modal-name {
   position: relative;
   bottom: 2rem;
-  left: 2rem;
-  font-size: 1.7rem;
+  left: 3rem;
   font-weight: 900;
+  font-size: 25px;
+  color: var(--pale-silver);
+  font-family: 'HL-Brush-3BK';
+  width: 200px;
 }
 
 .description {
@@ -383,6 +404,7 @@ box-shadow: rgba(151, 0, 0, 0.2) 0px 8px 24px, rgba(142, 0, 0, 0.2) 0px 16px 86p
   font-size: 1.8rem;
   line-height: 1.2;
   letter-spacing: 0.5px;
+  font-family: 'Stockholm';
 }
 
 #overlay {
@@ -415,16 +437,60 @@ box-shadow: rgba(151, 0, 0, 0.2) 0px 8px 24px, rgba(142, 0, 0, 0.2) 0px 16px 86p
   position: relative;
   left: 27rem;
   bottom: 25rem;
+  font-size: 15px;
+  font-family: 'Stockholm';
+  margin-top: 15px;
 }
 
 .comment-section input {
   margin-bottom: 2rem;
+    border-radius: 4px;
+    border: solid 1px black;
+    height: 33px;
+    width: 302px;
+    background-color: var(--pale-silver);
+    font-size: 18px;
+    font-family: 'Stockholm';
+    text-align: center;
+}
+
+.comment-section input::placeholder {
+  text-align: center;
+  font-size: 18px;
+  font-family: 'Stockholm';
+  background-color: var(--pale-silver);
 }
 
 .comment-section textarea {
   margin-bottom: 2rem;
   width: 30rem;
   max-width: 80%;
+  text-align: center;
+  height: 150px;
+  text-align: center;
+  font-size: 18px;
+  font-family: 'Stockholm';
+  background-color: var(--pale-silver);
+}
+
+.comment-section > h2 {
+  margin: 20px 0;
+}
+
+.display-comments > li {
+  margin-left: 18px;
+}
+
+#add-button {
+  width: 25%;
+  height: 45px;
+  transform: translateX(66px);
+  border: none;
+  border-radius: 30px;
+  background-color: var(--pale-silver);
+  font-size: 17px;
+  font-family: 'Stockholm';
+  color: var(--indigo-dye);
 }
 
 .about {
