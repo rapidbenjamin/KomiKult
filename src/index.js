@@ -62,6 +62,14 @@ addButton.addEventListener('click', async (e) => {
   renderComments(getComments);
 });
 
+overlay.addEventListener('click', () => {
+  const modals = document.querySelectorAll('.modal.active');
+  modals.forEach((modal) => {
+    closeModal(modal);
+  });
+});
+
+
 // Page load animation effect
 const hero = document.querySelector('.hero');
 const slider = document.querySelector('.slider');

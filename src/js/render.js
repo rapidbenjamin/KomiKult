@@ -36,6 +36,7 @@ export const renderCharacters = async (characters) => {
         <p class="char-name">${character.name}</p>
         <button data-charid=${character.id} class="like">Like</button><span class="likesCounter">${likeNum}</span>
         <button data-charid=${character.id} class="comment comment-btn">Comment</button>
+         <div class="heart-btn">
       </li>
     `;
     }
