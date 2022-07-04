@@ -1,5 +1,5 @@
 # KomiKult
-A comic characters list app that displays Marvel characters. It also allows you to Add your commit and like to a character. All data is preserved thanks to the external Marvel API.
+A comic characters list app that displays Marvel characters. It also allows you to add your comments and likes to a character. All data is preserved thanks to the external Marvel API.
 
 ## Built With
 - HTML
